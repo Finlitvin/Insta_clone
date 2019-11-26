@@ -1,0 +1,76 @@
+DROP DATABASE instagram;
+
+CREATE DATABASE instagram;
+
+USE instagram;
+
+CREATE TABLE users (
+	id INT NOT NULL AUTO_INCREMENT,
+	email VARCHAR(50) NOT NULL,
+	password VARCHAR(255) NOT NULL,
+	first_name VARCHAR(50),
+	last_name VARCHAR(50),
+	PRIMARY KEY(id),
+	UNIQUE(email)
+);
+
+CREATE TABLE users_roles (
+	id INT NOT NULL AUTO_INCREMENT,
+	user_id INT NOT NULL,
+	role_id INT NOT NULL,
+	PRIMARY KEY(id)
+);
+
+CREATE TABLE roles (
+	id INT NOT NULL AUTO_INCREMENT,
+	value VARCHAR(50) NOT NULL,
+	PRIMARY KEY(id),
+	UNIQUE(value)
+);
+
+CREATE TABLE posts (
+	id INT NOT NULL AUTO_INCREMENT,
+	user_id INT NOT NULL,
+	pub_date DATE,
+	content TEXT,
+	photo_url VARCHAR(255),
+	last_update DATE,
+	PRIMARY KEY(id)
+);
+
+CREATE TABLE likes (
+	id INT NOT NULL AUTO_INCREMENT,
+	user_id INT NOT NULL,
+	post_id INT NOT NULL,
+	PRIMARY KEY(id)
+);
+
+CREATE TABLE posts_tags (
+	id INT NOT NULL AUTO_INCREMENT,
+	post_id INT NOT NULL,
+	tag_id INT NOT NULL,
+	PRIMARY KEY(id)
+);
+
+CREATE TABLE tags(
+	id INT NOT NULL AUTO_INCREMENT,
+	value VARCHAR(50) NOT NULL,
+	PRIMARY KEY(id),
+	UNIQUE(value)
+);
+
+ALTER TABLE users_roles ADD CONSTRAINT fk_user_role_user FOREIGN KEY(user_id) REFERENCES users(id) ON DELETE CASCADE ON UPDATE CASCADE;
+
+ALTER TABLE users_roles ADD CONSTRAINT fk_user_role_role FOREIGN KEY(role_id) REFERENCES roles(id) ON DELETE CASCADE ON UPDATE CASCADE;
+
+ALTER TABLE posts ADD CONSTRAINT fk_post_user FOREIGN KEY(user_id) REFERENCES users(id) ON DELETE CASCADE ON UPDATE CASCADE;
+
+ALTER TABLE likes ADD CONSTRAINT fk_like_user FOREIGN KEY(user_id) REFERENCES users(id) ON DELETE CASCADE ON UPDATE CASCADE;
+
+ALTER TABLE likes ADD CONSTRAINT fk_like_post FOREIGN KEY(post_id) REFERENCES posts(id) ON DELETE CASCADE ON UPDATE CASCADE;
+
+ALTER TABLE posts_tags ADD CONSTRAINT fk_post_tag_post FOREIGN KEY(post_id) REFERENCES posts(id) ON DELETE CASCADE ON UPDATE CASCADE;
+
+ALTER TABLE posts_tags ADD CONSTRAINT fk_post_tag_tag FOREIGN KEY(tag_id) REFERENCES tags(id) ON DELETE CASCADE ON UPDATE CASCADE;
+
+INSERT INTO roles (id, value) VALUES (1, 'admin'), (2, 'user');
