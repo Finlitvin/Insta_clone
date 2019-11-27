@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 const sequelize = require('../database/sequelize');
 
-const Tag = sequelize.define('tag', {
+const Tags = sequelize.define('tags', {
     id: {
         type: Sequelize.INTEGER,
         autoIncrement: true,
@@ -15,4 +15,4 @@ const Tag = sequelize.define('tag', {
     }
 })
 
-export default Tag;
+export default Tags;

@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 const sequelize = require('../database/sequelize');
 
-const Post = sequelize.define('post', {
+const Posts = sequelize.define('posts', {
     id: {
         type: Sequelize.INTEGER,
         autoIncrement: true,
@@ -26,4 +26,4 @@ const Post = sequelize.define('post', {
     }
 })
 
-export default Post;
+export default Posts;

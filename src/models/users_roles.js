@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 const sequelize = require('../database/sequelize');
 
-const UserRole = sequelize.define('users_roles', {
+const UsersRoles = sequelize.define('users_roles', {
     id: {
         type: Sequelize.INTEGER,
         autoIncrement: true,
@@ -18,4 +18,4 @@ const UserRole = sequelize.define('users_roles', {
     }
 })
 
-export default UserRole;
+export default UsersRoles;
