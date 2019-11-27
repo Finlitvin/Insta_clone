@@ -1,0 +1,30 @@
+{
+  "name": "insta_clone",
+  "version": "1.0.0",
+  "description": "rest api",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Finlitvin/Insta_clone.git"
+  },
+  "keywords": [
+    "nodeJS"
+  ],
+  "author": "Rostislav",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Finlitvin/Insta_clone/issues"
+  },
+  "homepage": "https://github.com/Finlitvin/Insta_clone#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mysql2": "^2.0.1",
+    "sequelize": "^5.21.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.1"
+  }
+}
