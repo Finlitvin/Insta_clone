@@ -1,6 +1,6 @@
-const Sequelize = require('sequelize');
 const sequelize = require('../database/sequelize');
-
+const Sequelize = require('sequelize');
+// create table Likes
 const Likes = sequelize.define('likes', {
     id: {
         type: Sequelize.INTEGER,
@@ -17,6 +17,6 @@ const Likes = sequelize.define('likes', {
         type: Sequelize.INTEGER,
         allowNull: false
     },
-})
+}).sync();
 
-export default Likes;
+module.exports = Likes;

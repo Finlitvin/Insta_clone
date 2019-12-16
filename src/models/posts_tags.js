@@ -1,6 +1,6 @@
-const Sequelize = require('sequelize');
 const sequelize = require('../database/sequelize');
-
+const Sequelize = require('sequelize');
+// create table PostsTags
 const PostsTags = sequelize.define('posts_tags', {
     id: {
         type: Sequelize.INTEGER,
@@ -16,6 +16,6 @@ const PostsTags = sequelize.define('posts_tags', {
         type: Sequelize.INTEGER,
         allowNull: false
     }
-})
+}).sync();
 
-export default PostsTags;
+module.exports = PostsTags;

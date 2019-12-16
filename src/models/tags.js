@@ -1,6 +1,6 @@
-const Sequelize = require('sequelize');
 const sequelize = require('../database/sequelize');
-
+const Sequelize = require('sequelize');
+// create table Tags
 const Tags = sequelize.define('tags', {
     id: {
         type: Sequelize.INTEGER,
@@ -13,6 +13,6 @@ const Tags = sequelize.define('tags', {
         allowNull: false,
         unique: true
     }
-})
+}).sync();
 
-export default Tags;
+module.exports =  Tags;

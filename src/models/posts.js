@@ -1,6 +1,6 @@
-const Sequelize = require('sequelize');
 const sequelize = require('../database/sequelize');
-
+const Sequelize = require('sequelize');
+// create table Posts
 const Posts = sequelize.define('posts', {
     id: {
         type: Sequelize.INTEGER,
@@ -14,16 +14,19 @@ const Posts = sequelize.define('posts', {
     },
     pub_date: {
         type: Sequelize.DATE,
+        allowNull: false
     },
     content: {
-        type: Sequelize.TEXT
+        type: Sequelize.TEXT,
+        allowNull: false
     },
     photo_url: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false
     },
     last_update: {
         type: Sequelize.DATE
     }
-})
+}).sync();
 
-export default Posts;
+module.exports = Posts;

@@ -1,6 +1,7 @@
 const Sequelize = require('sequelize');
 const sequelize = require('../database/sequelize');
 
+// create table Users
 const Users = sequelize.define('users', {
     id: {
         type: Sequelize.INTEGER,
@@ -18,10 +19,13 @@ const Users = sequelize.define('users', {
         allowNull: false
     },
     first_name: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false,
     },
     last_name: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false
     },
-})
-export default Users;
+}).sync();
+
+module.exports = Users;

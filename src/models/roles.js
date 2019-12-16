@@ -1,6 +1,6 @@
-const Sequelize = require('sequelize');
 const sequelize = require('../database/sequelize');
-
+const Sequelize = require('sequelize');
+// create table Roles
 const Roles = sequelize.define('roles', {
     id: {
         type: Sequelize.INTEGER,
@@ -13,6 +13,6 @@ const Roles = sequelize.define('roles', {
         allowNull: false,
         unique: true
     }
-})
+}).sync();
 
-export default Roles;
+module.exports = Roles;
