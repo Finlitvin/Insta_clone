@@ -5,11 +5,9 @@ const sequelize = new Sequelize('instagram', 'root', 'root', config);
 
 // test connection to DB
 sequelize.authenticate().then(() => {
-    console.log('Connection established successfully: ', config.host);
+    console.log('DATABASE [ OK ]    HOST: ', config.host);
 }).catch(err => {
-    console.error('Unable to connect to the database:', err);
-}).finally(() => {
-    sequelize.close();
+    console.error('DATABASE ', err);
 });
 
 module.exports = sequelize;

@@ -6,6 +6,7 @@ const Likes = require('../models/likes');
 const Tags = require('../models/tags');
 const PostsTags = require('../models/posts_tags');
 
+
 const db = {
     Users: Users,
     Posts: Posts,
@@ -15,5 +16,6 @@ const db = {
     Tags: Tags,
     PostsTags: PostsTags
 };
+
 
 module.exports = db;
