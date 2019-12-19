@@ -7,7 +7,6 @@ const Users = sequelize.define('users', {
         type: Sequelize.INTEGER,
         autoIncrement: true,
         primaryKey: true,
-        allowNull: false
     },
     email: {
         type: Sequelize.INTEGER,
@@ -26,6 +25,6 @@ const Users = sequelize.define('users', {
         type: Sequelize.STRING,
         allowNull: false
     },
-}).sync();
+});
 
 module.exports = Users;

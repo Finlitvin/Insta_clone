@@ -6,7 +6,6 @@ const Posts = sequelize.define('posts', {
         type: Sequelize.INTEGER,
         autoIncrement: true,
         primaryKey: true,
-        allowNull: false
     },
     user_id: {
         type: Sequelize.INTEGER,
@@ -27,6 +26,6 @@ const Posts = sequelize.define('posts', {
     last_update: {
         type: Sequelize.DATE
     }
-}).sync();
+});
 
 module.exports = Posts;

@@ -6,7 +6,6 @@ const PostsTags = sequelize.define('posts_tags', {
         type: Sequelize.INTEGER,
         autoIncrement: true,
         primaryKey: true,
-        allowNull: false
     },
     post_id: {
         type: Sequelize.INTEGER,
@@ -16,6 +15,6 @@ const PostsTags = sequelize.define('posts_tags', {
         type: Sequelize.INTEGER,
         allowNull: false
     }
-}).sync();
+});
 
 module.exports = PostsTags;

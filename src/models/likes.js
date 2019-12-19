@@ -6,17 +6,15 @@ const Likes = sequelize.define('likes', {
         type: Sequelize.INTEGER,
         autoIncrement: true,
         primaryKey: true,
-        allowNull: false
     },
     user_id: {
         type: Sequelize.INTEGER,
         allowNull: false
-
     },
     post_id: {
         type: Sequelize.INTEGER,
         allowNull: false
     },
-}).sync();
+});
 
 module.exports = Likes;

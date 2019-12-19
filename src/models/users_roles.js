@@ -6,7 +6,6 @@ const UsersRoles = sequelize.define('users_roles', {
         type: Sequelize.INTEGER,
         autoIncrement: true,
         primaryKey: true,
-        allowNull: false
     },
     user_id: {
         type: Sequelize.INTEGER,
@@ -16,6 +15,6 @@ const UsersRoles = sequelize.define('users_roles', {
         type: Sequelize.INTEGER,
         allowNull: false
     }
-}).sync();
+});
 
 module.exports =  UsersRoles;
