@@ -5,6 +5,7 @@ class PostService{
 
         await postRepository.addPost(post);
     }
+
 }
 
 module.exports = new PostService();
