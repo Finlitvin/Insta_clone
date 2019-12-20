@@ -19,6 +19,21 @@ class PostController{
         }
     }
 
+
+
+    async deletePost(req, res, next){
+        try {
+
+            const id = req.params.id;
+            
+            await postService.deletePost(id);
+
+            res.send('delete post');
+        } catch (err) {
+            next(err);
+        }
+    }
+
 }   
                                                                                                                                                                                                                                                         
-module.exports =     new PostController();
+module.exports = new PostController();
