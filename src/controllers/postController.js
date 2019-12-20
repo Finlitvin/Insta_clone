@@ -19,8 +19,6 @@ class PostController{
         }
     }
 
-
-
     async deletePost(req, res, next){
         try {
 
@@ -29,6 +27,21 @@ class PostController{
             await postService.deletePost(id);
 
             res.send('delete post');
+        } catch (err) {
+            next(err);
+        }
+    }
+
+    async getAllPost(req, res, next){
+        try {
+
+            const posts = await postService.getAllPost();
+
+            if(!posts || !posts.length){
+                next(new EmptyResExeption('Empty body'));
+            }
+
+            res.send(posts);
         } catch (err) {
             next(err);
         }
