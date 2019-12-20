@@ -6,10 +6,15 @@ class PostService{
         await postRepository.addPost(post);
     }
 
-
-
     async deletePost(id){
         await postRepository.deletePost(id);
+    }
+
+    async getAllPost(){
+
+        const posts = await postRepository.getAllPost();
+
+        return posts;
     }
 
 }
