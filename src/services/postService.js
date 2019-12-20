@@ -6,6 +6,12 @@ class PostService{
         await postRepository.addPost(post);
     }
 
+
+
+    async deletePost(id){
+        await postRepository.deletePost(id);
+    }
+
 }
 
 module.exports = new PostService();
