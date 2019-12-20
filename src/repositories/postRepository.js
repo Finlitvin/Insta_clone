@@ -6,6 +6,12 @@ class PostRepository{
         await Post.create(post);
     }
 
+
+
+    async deletePost(id){
+        await Post.destroy({where: { id : id } });
+    }
+
 }
 
 
