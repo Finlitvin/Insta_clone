@@ -7,9 +7,9 @@ class RoleController{
           const id = req.params.id;
           const role = await roleService.getRole(id);
           
-          if (!role) {
-            next(new EmptyResExeption('Empty result body.'));
-          }
+          // if (!role) {
+          //   next(new EmptyResExeption('Empty result body.'));
+          // }
           
           res.send(role);
 
@@ -41,7 +41,7 @@ class RoleController{
           
           await roleService.addRole(role);
     
-          res.ssend('add role');
+          res.send('add role');
 
         } catch (err) {
           next(err);
