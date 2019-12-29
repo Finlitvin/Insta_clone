@@ -4,6 +4,7 @@ const app = express();
 const postRouter = require('./routes/postRout');
 const roleRouter = require('./routes/roleRout');
 const tagRouter = require('./routes/tagRout');
+const likeRouter = require('./routes/likeRout');
 
 const bp = require('body-parser');
 
@@ -15,7 +16,8 @@ app.use(bp());
 app.use('/post', postRouter);
 app.use('/role', roleRouter);
 app.use('/tag', tagRouter);
+app.use('/like', likeRouter);
 
 app.listen(process.env.PORT || PORT, () => {
     console.log(`SERVER [ OK ]    PORT ${process.env.PORT || PORT}`);
-});
+}); 

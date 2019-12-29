@@ -13,7 +13,7 @@ router.delete('/:id', likeController.deleteLike);
 router.get('/', likeController.getAllLikes);
 router.get('/:id', likeController.getLike);
 
-router.get('/films/:id', likeController.getLike);
+router.get('/posts/:id', likeController.getLike);
 
 
 module.exports = router;
