@@ -64,9 +64,9 @@ class TagController{
       async updateTag(req, res, next) {
         try {
           const id = req.params.id;
-          const role = req.body;
+          const tag = req.body;
           
-          await tagService.updateTag(id, role);
+          await tagService.updateTag(id, tag);
     
           res.send('update tag');
 
