@@ -29,7 +29,7 @@ class TagRepository{
       }
     
       async updateTag(id, newTagData) {
-        const tag = await this.getRole(id);
+        const tag = await this.getTag(id);
         await tag.update(newTagData);
       }
 
