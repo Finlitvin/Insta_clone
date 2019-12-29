@@ -76,4 +76,4 @@ class TagController{
       }
 }
 
-module.exports = TagController();
+module.exports = new TagController();
