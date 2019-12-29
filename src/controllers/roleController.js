@@ -10,7 +10,9 @@ class RoleController{
           if (!role) {
             next(new EmptyResExeption('Empty result body.'));
           }
-    
+          
+          res.send(role);
+
         } catch (err) {
           next(err);
         }
@@ -23,7 +25,9 @@ class RoleController{
           if (!roles || !roles.length) {
             next(new EmptyResExeption('Empty result body.'));
           }
-    
+          
+          res.send(roles);
+
         } catch (err) {
           next(err);
         }
@@ -31,10 +35,14 @@ class RoleController{
     
       async addRole(req, res, next) {
         try {
-          const role = req.body;
+          const role = {
+                value: req.body.value,
+          }
           
           await roleService.addRole(role);
     
+          res.ssend('add role');
+
         } catch (err) {
           next(err);
         }
@@ -45,7 +53,9 @@ class RoleController{
           const id = req.params.id;
           
           await roleService.deleteRole(id);
-    
+            
+            res.send('delete role');
+            
         } catch (err) {
           next(err);
         }
@@ -57,7 +67,9 @@ class RoleController{
           const role = req.body;
           
           await roleService.updateRole(id, role);
-    
+            
+          res.send('update role');
+
         } catch (err) {
           next(err);
         }
