@@ -5,7 +5,7 @@ class TagController{
     async getTag(req, res, next) {
         try {
           const id = req.params.id;
-          const tag = await tagsService.getTag(id);
+          const tag = await tagService.getTag(id);
           
           if (!tag) {
             next(new EmptyResExeption('Empty result body.'));
@@ -20,7 +20,7 @@ class TagController{
     
       async getAllTags(req, res, next) {
         try {
-          const tags = await tagsService.getAllTags();
+          const tags = await tagService.getAllTags();
           
           if (!tags || !tags.length) {
             next(new EmptyResExeption('Empty result body.'));
@@ -39,7 +39,7 @@ class TagController{
               value: req.body.value,
           }
           
-          await tagsService.addTag(role);
+          await tagService.addTag(role);
     
           res.send('add tag');
 
@@ -52,7 +52,7 @@ class TagController{
         try {
           const id = req.params.id;
           
-          await tagsService.deleteTag(id);
+          await tagService.deleteTag(id);
     
           res.send('delete tag');
 
@@ -66,7 +66,7 @@ class TagController{
           const id = req.params.id;
           const role = req.body;
           
-          await tagsService.updateTag(id, role);
+          await tagService.updateTag(id, role);
     
           res.send('update tag');
 
