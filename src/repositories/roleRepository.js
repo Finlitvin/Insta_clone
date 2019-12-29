@@ -32,3 +32,5 @@ class RoleRepository{
         await role.update(newRoleData);
       }
 }
+
+module.exports = new RoleRepository();
