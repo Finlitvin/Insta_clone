@@ -12,7 +12,7 @@ class LikeRepository{
 
 		const likes = await likeModel.findAll({
 			where: {
-				id: id
+				user_id: id
 			}
 		});
 
