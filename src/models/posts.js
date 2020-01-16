@@ -1,12 +1,11 @@
-const sequelize = require('../database/sequelize');
+// LOAD MODULE
 const Sequelize = require('sequelize');
-// create table Posts
+const sequelize = require('../database/sequelize');
+
+//------------------------------------------------
+
+
 const Posts = sequelize.define('posts', {
-    id: {
-        type: Sequelize.INTEGER,
-        autoIncrement: true,
-        primaryKey: true,
-    },
     user_id: {
         type: Sequelize.INTEGER,
         allowNull: false
@@ -16,8 +15,7 @@ const Posts = sequelize.define('posts', {
         allowNull: false
     },
     content: {
-        type: Sequelize.TEXT,
-        allowNull: false
+        type: Sequelize.TEXT
     },
     photo_url: {
         type: Sequelize.STRING,
@@ -27,5 +25,6 @@ const Posts = sequelize.define('posts', {
         type: Sequelize.DATE
     }
 });
+
 
 module.exports = Posts;

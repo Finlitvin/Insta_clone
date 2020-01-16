@@ -1,22 +1,38 @@
 const postRepository = require('../repositories/postRepository');
 
+
 class PostService{
-    async addPost(post){
 
-        await postRepository.addPost(post);
-    }
+	async addPost(post){
 
-    async deletePost(id){
-        await postRepository.deletePost(id);
-    }
+		await postRepository.addPost(post);
+	}
 
-    async getAllPost(){
+	async getPost(id){
 
-        const posts = await postRepository.getAllPost();
+		const post = await postRepository.getPost(id);
 
-        return posts;
-    }
+		return post;
+	}
 
+	async getAllPost(){
+
+		const posts = await postRepository.getAllPost();
+
+		return posts;
+	}
+
+	async deletePost(id){
+
+		await postRepository.deletePost(id); 
+	}
+
+	async updatePost(id, newPostData){
+
+		await postRepository.updatePost(id, newPostData);
+
+	}
 }
+
 
 module.exports = new PostService();

@@ -1,12 +1,11 @@
-const sequelize = require('../database/sequelize');
+// LOAD MODULE
 const Sequelize = require('sequelize');
-// create table Tags
+const sequelize = require('../database/sequelize');
+
+//------------------------------------------------
+
+
 const Tags = sequelize.define('tags', {
-    id: {
-        type: Sequelize.INTEGER,
-        autoIncrement: true,
-        primaryKey: true,
-    },
     value: {
         type:Sequelize.STRING,
         allowNull: false,
@@ -14,4 +13,5 @@ const Tags = sequelize.define('tags', {
     }
 });
 
-module.exports =  Tags;
+
+module.exports = Tags;

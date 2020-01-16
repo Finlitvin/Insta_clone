@@ -1,12 +1,11 @@
-const sequelize = require('../database/sequelize');
+// LOAD MODULE
 const Sequelize = require('sequelize');
-// create table UsersRoles
+const sequelize = require('../database/sequelize');
+
+//------------------------------------------------
+
+
 const UsersRoles = sequelize.define('users_roles', {
-    id: {
-        type: Sequelize.INTEGER,
-        autoIncrement: true,
-        primaryKey: true,
-    },
     user_id: {
         type: Sequelize.INTEGER,
         allowNull: false
@@ -17,4 +16,5 @@ const UsersRoles = sequelize.define('users_roles', {
     }
 });
 
-module.exports =  UsersRoles;
+
+module.exports = UsersRoles;

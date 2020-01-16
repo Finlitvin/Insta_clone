@@ -1,9 +1,9 @@
 {
-    "logging": false,
-    "dialect": "mysql",
-    "host": "localhost",
-    "define": {
-      "timestamps": false,
-      "underscored": true
-    }
-  }
+	"logging": false,
+	"dialect": "mysql",
+	"host": "localhost",
+	"define": {
+		"timestamps": false,
+		"underscored": true
+	}
+}

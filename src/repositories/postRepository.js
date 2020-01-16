@@ -1,21 +1,41 @@
-const Post = require('../models/posts');
+const postModel = require('../models/posts');
+
 
 class PostRepository{
-    async addPost(post){
+	
+	async addPost(post){
 
-        await Post.create(post);
-    }
+		await postModel.create(post);
+	}
 
-    async deletePost(id){
-        await Post.destroy({where: { id : id } });
-    }
+	async getPost(id){
 
-    async getAllPost(){
-        const posts = await Post.findAll();
+		const post = await postModel.findByPk(id);
 
-        return posts;
-    }
+		return post;
+	}
 
+	async getAllPost(){
+
+		const posts = await postModel.findAll();
+
+		return posts;
+	}
+
+	async deletePost(id){
+		await postModel.destroy({
+			where: {
+				id: id
+			}
+		});
+	}
+
+	async updatePost(id, newPostData){
+
+		const post = await postModel.findByPk(id);
+
+		await post.update(newPostData);
+	}
 }
 
 

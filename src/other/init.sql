@@ -1,8 +1,8 @@
-DROP DATABASE instagram;
+DROP DATABASE insta;
 
-CREATE DATABASE instagram;
+CREATE DATABASE insta;
 
-USE instagram;
+USE insta;
 
 CREATE TABLE users (
 	id INT NOT NULL AUTO_INCREMENT,
