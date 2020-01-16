@@ -3,9 +3,9 @@ const likeRepository = require('../repositories/likeRepository');
 
 class LikeService{
 
-	async addLike(id){
+	async addLike(like){
 
-		await likeRepository.addLike(id);
+		await likeRepository.addLike(like);
 	}
 
 	async getPostLikes(id){
