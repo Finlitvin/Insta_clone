@@ -2,7 +2,7 @@ const userRepository = require('../repositories/userRepository');
 const userRoleRepository = require('../repositories/userRoleRepository');
 
 
-class UserService{
+class AuthService{
 
 	async signUp(userData){
 
@@ -27,4 +27,4 @@ class UserService{
 }
 
 
-module.exports = new UserService();
+module.exports = new AuthService();
