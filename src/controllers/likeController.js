@@ -9,9 +9,10 @@ class LikeController{
 
 		try{
 
+
 			const like = {
 				user_id: req.body.user_id,
-				post_id: req.body.post_id,
+				post_id: req.params.id,
 			}
 
 			await likeService.addLike(like);

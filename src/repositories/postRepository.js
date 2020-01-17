@@ -1,5 +1,5 @@
 const postModel = require('../models/posts');
-
+const likeRepository = require('./likeRepository');
 
 class PostRepository{
 	
