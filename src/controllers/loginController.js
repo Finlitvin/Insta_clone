@@ -21,7 +21,7 @@ class LoginController {
 
 	logout(req, res, next) {
 		req.session.user = null;
-		res.json('ok');
+		res.send('ok');
 		}
 	}
 
