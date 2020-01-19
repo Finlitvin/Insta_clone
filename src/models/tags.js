@@ -1,11 +1,8 @@
-// LOAD MODULE
 const Sequelize = require('sequelize');
 const sequelize = require('../database/sequelize');
 
-//------------------------------------------------
 
-
-const Tags = sequelize.define('tags', {
+const Tag = sequelize.define('tags', {
     value: {
         type:Sequelize.STRING,
         allowNull: false,
@@ -14,4 +11,4 @@ const Tags = sequelize.define('tags', {
 });
 
 
-module.exports = Tags;
+module.exports = Tag;

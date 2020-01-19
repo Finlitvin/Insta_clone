@@ -1,11 +1,8 @@
-// LOAD MODULE
 const Sequelize = require('sequelize');
 const sequelize = require('../database/sequelize');
 
-//------------------------------------------------
 
-
-const Roles = sequelize.define('roles', {
+const Role = sequelize.define('roles', {
     value: {
         type:Sequelize.STRING,
         allowNull: false,
@@ -14,4 +11,4 @@ const Roles = sequelize.define('roles', {
 });
 
 
-module.exports = Roles;
+module.exports = Role;

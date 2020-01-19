@@ -1,6 +1,0 @@
-{
-	"PORT": 3000,
-	"DB_NAME":"insta",
-	"DB_USERNAME":"root",
-	"DB_PASSWORD": "root"
-}

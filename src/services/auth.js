@@ -1,29 +1,30 @@
-const userRepository = require('../repositories/userRepository');
-const userRoleRepository = require('../repositories/userRoleRepository');
+const User = require('../repository/user');
+const UserRole = require('../repository/userRole');
 
 
 class AuthService{
 
 	async signUp(userData){
-
-		return await userRepository.create(userData);
+		console.log('lklk')
+		return await User.create(userData);
+		console.log('lklk2')
 	}
 
 	async login(email, password, next){
-		
-		const user = await userRepository.findUser(email);
+		const user = await User.findUser(email);
 
-		// if (!user || !user.validatePassword(password)) {
-		// 	return next(null, false, "Wrong email or password");
-		// }
+		if(!user || !user.validatePassword(password)){
+			return next(null, false, "Wrong email/password");
+		}
 
-		user.role = await userRoleRepository.getRole(user.dataValues.id);
-		if (!user.role){
+		user.role = await UserRole.getRole(user.dataValues.id);
+
+		if(!user.role){
 			return next(null, false, "Internal error");
 		}
 
 		return next(null, user);
-		}
+	}
 }
 
 

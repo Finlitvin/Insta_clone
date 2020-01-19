@@ -1,23 +1,10 @@
-// LOAD MODULE
 const Sequelize = require('sequelize');
-
 const config = require('../config/sequelize');
 
-const dbInfo = require('../config/default');
-
-const sequelize = new Sequelize(dbInfo.DB_NAME, dbInfo.DB_USERNAME, dbInfo.DB_PASSWORD, config);
-
-//--------------------------------------------
+require('dotenv').config();
 
 
-// CONNECT TO DB
-sequelize.authenticate().then(() => {
-	sequelize.sync();
-	console.log(`DATABASE [ OK ]	HOST: ${config.host}`);
-}).catch(err => {
-	console.error('DATABASE [ - ]	', err);
-});
+const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USERNAME, process.env.DB_PASSWORD, config);
 
 
 module.exports = sequelize;
-

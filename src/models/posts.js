@@ -1,11 +1,8 @@
-// LOAD MODULE
 const Sequelize = require('sequelize');
 const sequelize = require('../database/sequelize');
 
-//------------------------------------------------
 
-
-const Posts = sequelize.define('posts', {
+const Post = sequelize.define('posts', {
     user_id: {
         type: Sequelize.INTEGER,
         allowNull: false
@@ -27,4 +24,4 @@ const Posts = sequelize.define('posts', {
 });
 
 
-module.exports = Posts;
+module.exports = Post;
