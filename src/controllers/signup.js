@@ -7,7 +7,6 @@ class SignUpController{
 
 	async signup(req, res, next){
 		const userData = req.body;
-		console.log(userData);
 		try{
 			await authService.signUp(userData);
 			res.json(new Response("Registration successful", 200));

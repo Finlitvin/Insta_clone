@@ -5,9 +5,7 @@ const UserRole = require('../repository/userRole');
 class AuthService{
 
 	async signUp(userData){
-		console.log('lklk')
 		return await User.create(userData);
-		console.log('lklk2')
 	}
 
 	async login(email, password, next){
