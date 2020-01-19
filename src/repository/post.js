@@ -5,6 +5,7 @@ const Like = require('./like');
 class PostRepository{
 
 	async create(post){
+		post.pub_date = new Date();
 		return await Post.create(post);
 	}
 
