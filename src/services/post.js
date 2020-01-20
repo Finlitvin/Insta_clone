@@ -11,8 +11,8 @@ class PostService{
 		return await Post.update(userId, id, postData);
 	}
 
-	async delete(id){
-		return await Post.delete(id);
+	async delete(userId, id){
+		return await Post.delete(userId, id);
 	}
 
 	async setLike(userId, postId){

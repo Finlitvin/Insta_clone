@@ -20,7 +20,13 @@ class PostRepository{
 		await Post.update(postData, { where: { id: id } });
 	}
 
-	async delete(id){
+	async delete(userId, id){
+		const currentPost = await Post.findOne({ where: {id: id} });
+
+		if(currentPost.user_id != userId){
+			throw new Error("Not right");
+		}
+
 		await Post.destroy({ where: { id: id } });
 	}
 
@@ -32,6 +38,12 @@ class PostRepository{
 	}
 
 	async deleteLike(userId, postId){
+		const currentPost = await Post.findOne({ where: {id: id} });
+
+		if(currentPost.user_id != userId){
+			throw new Error("Not right");
+		}
+
 		await Like.delete(userId, postId);
 	}
 }

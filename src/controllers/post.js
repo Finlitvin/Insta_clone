@@ -43,7 +43,9 @@ class PostController{
 		const postId = req.params.id;
 
 		try{
-			await postService.delete(postId);
+			let userId = req.session.user.id;
+
+			await postService.delete(userId, postId);
 			res.json(new Response("Delete successful", 200));
 		}catch(err){
 			return next(new DeleteError("Delete failed"));
