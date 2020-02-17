@@ -1,5 +1,6 @@
-const Post = require('../repository/post');
-
+const Post = require('../repositories/post');
+const Like = require('../repositories/like');
+const IncorrectDataError = require('../errors/IncorrectDataError');
 
 class PostService{
 
@@ -8,6 +9,10 @@ class PostService{
 	}
 
 	async update(userId, id, postData){
+		const p = await Post.getPostById(id);
+		if(p.user_id != userId){
+			throw new IncorrectDataError("ererere");
+		}
 		return await Post.update(userId, id, postData);
 	}
 

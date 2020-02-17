@@ -10,41 +10,24 @@ class PostRepository{
 	}
 
 	async update(userId, id, postData){
-		const currentPost = await Post.findOne({ where: {id: id} });
-
-		if(currentPost.user_id != userId){
-			throw new Error("Not right");
-		}
-
 		postData.last_update = new Date();
 		await Post.update(postData, { where: { id: id } });
 	}
 
 	async delete(userId, id){
-		const currentPost = await Post.findOne({ where: {id: id} });
-
-		if(currentPost.user_id != userId){
-			throw new Error("Not right");
-		}
-
 		await Post.destroy({ where: { id: id } });
 	}
 
 	async setLike(userId, postId){
-		if(await Like.findLike(userId, postId)){
-			throw new Error('Error: like exist')
-		}
 		await Like.create(userId, postId);
 	}
 
 	async deleteLike(userId, postId){
-		const currentPost = await Post.findOne({ where: {id: id} });
-
-		if(currentPost.user_id != userId){
-			throw new Error("Not right");
-		}
-
 		await Like.delete(userId, postId);
+	}
+
+	async getPostById(id){
+		return await Post.findByPk(id);
 	}
 }
 

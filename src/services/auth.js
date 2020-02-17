@@ -1,5 +1,5 @@
-const User = require('../repository/user');
-const UserRole = require('../repository/userRole');
+const User = require('../repositories/user');
+const UserRole = require('../repositories/userRole');
 
 
 class AuthService{
